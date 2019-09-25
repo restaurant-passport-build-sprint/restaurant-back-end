@@ -6,6 +6,7 @@ const secret = require("../Secret/secret");
 
 router.post("/register", (req, res) => {
   const creds = req.body;
+  console.log("user");
   const hash = bcrypt.hashSync(creds.password, 14);
   creds.password = hash;
   if (creds) {
@@ -14,6 +15,7 @@ router.post("/register", (req, res) => {
         res.status(201).json(user);
       })
       .catch(error => {
+        console.log(error);
         res.status(500).json({ message: "failed to add user" });
       });
   } else {
