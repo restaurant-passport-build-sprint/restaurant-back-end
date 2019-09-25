@@ -7,6 +7,8 @@ exports.up = function(knex) {
         .unique()
         .notNullable();
       tbl.string("password", 140).notNullable();
+      tbl.string("email", 140).notNullable();
+      tbl.string("city", 140).notNullable();
       tbl.timestamp("created_at").defaultTo(knex.fn.now());
     })
     .createTable("restaurant_review", tbl => {
