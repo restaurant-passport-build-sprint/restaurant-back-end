@@ -9,7 +9,7 @@ https://foodie-pass.herokuapp.com/auth/register
 \*\*\* Requires a username, and password
 
 POST - Login a registered user. Also provides Web Token.
-https://foodie-pass.herokuapp.com/auth/llogin
+https://foodie-pass.herokuapp.com/auth/login
 \*\*\* Requires username and password
 
 GET - Returns all posts/portfolios
