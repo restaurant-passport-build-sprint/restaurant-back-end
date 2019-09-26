@@ -6,7 +6,7 @@ const secret = require("../Secret/secret");
 
 router.post("/register", (req, res) => {
   const creds = req.body;
-  console.log("user");
+  // console.log("user");
   const hash = bcrypt.hashSync(creds.password, 14);
   creds.password = hash;
   if (creds) {
