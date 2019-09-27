@@ -18,7 +18,12 @@ describe("users model", () => {
     it("inserts users into the db", async () => {
       const UserNumber = await db("users");
       expect(UserNumber).toHaveLength(0);
-      await User.add({ username: "hello", password: "hey" });
+      await User.add({
+        username: "hello",
+        password: "hey",
+        city: "NYC",
+        email: "1111@gmail.com"
+      });
       expect(UserNumber).toHaveLength(0);
     });
   });
@@ -27,7 +32,12 @@ describe("users model", () => {
     it("inserts users into the db", async () => {
       const UserNumber = await db("users");
       expect(UserNumber).toHaveLength(0);
-      await User.findBy({ username: "hello", password: "hey" });
+      await User.findBy({
+        username: "hello",
+        password: "hey",
+        city: "NYC",
+        email: "1111@gmail.com"
+      });
       expect(UserNumber).toHaveLength(0);
     });
   });
@@ -36,7 +46,12 @@ describe("users model", () => {
     it("responds with json", function() {
       request(server)
         .post("/register")
-        .send({ username: "john", password: "john" })
+        .send({
+          username: "john",
+          password: "john",
+          city: "NYC",
+          email: "1111@gmail.com"
+        })
 
         .expect("Content-Type", /json/)
         .expect(201);
